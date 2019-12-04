@@ -26,10 +26,7 @@
         "laravel": {
             "providers": [
                 "Larva\\WeChat\\Notifications\\WeChatChannelServiceProvider"
-            ],
-            "aliases": {
-                "UMengPush": "Larva\\WeChat\\Push\\WeChatPush"
-            }
+            ]
         }
     },
     "prefer-stable": true
