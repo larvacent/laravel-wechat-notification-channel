@@ -7,7 +7,7 @@
 
 ```shell
 
-composer require "composer require larva/laravel-wechat-notification-channel"
+composer require "larva/laravel-wechat-notification-channel"
 ```
 
 ## 配置
