@@ -32,12 +32,6 @@ class MiniProgramChannel
     {
         /** @var array $message */
         $message = $notification->toWechatMiniProgram($notifiable);
-
-        if (!$notifiable->routeNotificationFor('wechatMiniProgram', $notification)) {
-            return;
-        }
-        $message['touser'] = $notifiable->routeNotificationFor('wechatMiniProgram', $notification);
-
         Facade::miniProgram()->template_message->send($message);
     }
 }

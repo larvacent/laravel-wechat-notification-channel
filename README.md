@@ -50,15 +50,18 @@ class WelcomeNotification extends Notification
     }
 
     /**
-     * Build the mail representation of the notification.
+     * Build the wechat representation of the notification.
      *
      * @param mixed $notifiable
-     * @return array
+     * @return array|false
      */
     public function toWechat($notifiable)
     {
+        if (!$toUser = $notifiable->routeNotificationFor('wechat',$this)) {
+            return false;
+        }
         return [
-            'touser' => 'user-openid',//这一行不需要
+            'touser' => $toUser,//这一行不需要
             'template_id' => 'template-id',
             'page' => 'index',
             'form_id' => 'form-id',
@@ -71,15 +74,18 @@ class WelcomeNotification extends Notification
     }
     
     /**
-     * Build the mail representation of the notification.
+     * Build the MiniProgram representation of the notification.
      *
      * @param mixed $notifiable
-     * @return array
+     * @return array|false
      */
     public function toWechatMiniProgram($notifiable)
     {
+        if (!$toUser = $notifiable->routeNotificationFor('wechatMiniProgram',$this)) {
+            return false;
+        }
         return [
-            'touser' => 'user-openid',//这一行不需要
+            'touser' => $toUser,//这一行不需要
             'template_id' => 'template-id',
             'page' => 'index',
             'form_id' => 'form-id',

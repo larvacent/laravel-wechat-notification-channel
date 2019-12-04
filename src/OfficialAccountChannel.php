@@ -32,12 +32,6 @@ class OfficialAccountChannel
     {
         /** @var array $message */
         $message = $notification->toWechat($notifiable);
-
-        if (!$notifiable->routeNotificationFor('wechat', $notification)) {
-            return;
-        }
-        $message['touser'] = $notifiable->routeNotificationFor('wechat', $notification);
-
         Facade::officialAccount()->template_message->send($message);
     }
 }
