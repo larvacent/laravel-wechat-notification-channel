@@ -1,7 +1,11 @@
 # larva/laravel-wechat-notification-channel
 
+[![Packagist](https://img.shields.io/packagist/l/larva/laravel-wechat-notification-channel.svg?maxAge=2592000)](https://packagist.org/packages/larva/laravel-wechat-notification-channel)
+[![Total Downloads](https://img.shields.io/packagist/dt/larva/laravel-wechat-notification-channel.svg?style=flat-square)](https://packagist.org/packages/larva/laravel-wechat-notification-channel)
+
 适用于 Laravel 的微信模板消息推送通道适配器
 
+该扩展是对 安正超 超哥的微信扩展的补充。
 
 ## 安装
 
