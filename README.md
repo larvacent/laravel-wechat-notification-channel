@@ -65,7 +65,7 @@ class WelcomeNotification extends Notification
             return false;
         }
         return [
-            'touser' => $toUser,//这一行不需要
+            'touser' => $toUser,
             'template_id' => 'template-id',
             'page' => 'index',
             'form_id' => 'form-id',
@@ -89,7 +89,7 @@ class WelcomeNotification extends Notification
             return false;
         }
         return [
-            'touser' => $toUser,//这一行不需要
+            'touser' => $toUser,
             'template_id' => 'template-id',
             'page' => 'index',
             'form_id' => 'form-id',
