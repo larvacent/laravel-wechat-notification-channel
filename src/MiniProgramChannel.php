@@ -12,7 +12,7 @@ use Overtrue\LaravelWeChat\Facade;
 use Illuminate\Notifications\Notification;
 
 /**
- * Class MiniProgram
+ * 小程序通知渠道
  *
  * @author Tongle Xu <xutongle@gmail.com>
  */
@@ -32,6 +32,8 @@ class MiniProgramChannel
     {
         /** @var array $message */
         $message = $notification->toWechatMiniProgram($notifiable);
-        Facade::miniProgram()->template_message->send($message);
+        if ($message) {
+            Facade::miniProgram()->template_message->send($message);
+        }
     }
 }
