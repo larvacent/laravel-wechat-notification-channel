@@ -8,7 +8,7 @@
 
 namespace Larva\WeChat\Notifications;
 
-use Overtrue\LaravelWeChat\Facade;
+use Overtrue\LaravelWeChat\Facade as WeChat;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -33,7 +33,7 @@ class MiniProgramChannel
         /** @var array $message */
         $message = $notification->toWechatMiniProgram($notifiable);
         if ($message) {
-            Facade::miniProgram()->template_message->send($message);
+            WeChat::miniProgram()->template_message->send($message);
         }
     }
 }

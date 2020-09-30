@@ -8,7 +8,7 @@
 
 namespace Larva\WeChat\Notifications;
 
-use Overtrue\LaravelWeChat\Facade;
+use Overtrue\LaravelWeChat\Facade as WeChat;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -33,7 +33,7 @@ class OfficialAccountChannel
         /** @var array $message */
         $message = $notification->toWechat($notifiable);
         if ($message) {
-            Facade::officialAccount()->template_message->send($message);
+            WeChat::officialAccount()->template_message->send($message);
         }
     }
 }
