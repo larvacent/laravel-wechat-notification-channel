@@ -32,6 +32,12 @@ class User {
     public function routeNotificationForWechatMiniProgram(){
         return $this->wechatminiid;
     }
+
+    public function routeNotificationForWechatSubscribe(){
+        return $this->wechatminiid;
+        // or
+        // $notifiable->routeNotificationFor('wechatMiniProgram',$this) 通过小程序获取 不再设置此方法
+    }
 }
 ```
 
@@ -98,6 +104,32 @@ class WelcomeNotification extends Notification
                'keyword2' => 'VALUE2',
                    // ...
             ],
+        ];
+    }
+
+    /**
+     * Build the WechatSubscribeChannel representation of the notification.
+     *
+     * @param mixed $notifiable
+     * @return array|false
+     */
+    public function toWechatSubscribe($notifiable)
+    {
+        if (!$toUser = $notifiable->routeNotificationFor('wechatSubscribe',$this)) {
+            return false;
+        }
+        return [
+            'touser' => $toUser,
+            'template_id' => 'template-id',
+            'page' => 'pages/index/index',
+            'miniprogram_state' => env('APP_DEBUG', false) ? 'trial' : 'formal',
+            // 跳转小程序类型：developer 为开发版；trial为体验版；formal为正式版；默认为正式版
+            'data' => [
+                'name1' => 'name1',
+                'thing2' => 'thing2',
+                //...
+            ],
+
         ];
     }
 }
