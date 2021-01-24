@@ -28,6 +28,7 @@ class WeChatChannelServiceProvider extends ServiceProvider
         $channels = [
             'wechat' => OfficialAccountChannel::class,
             'wechatMiniProgram' => MiniProgramChannel::class
+            'wechatSubscribe' => WechatSubscribeChannel::class,
         ];
         foreach ($channels as $name => $className) {
             Notification::extend($name, function () use ($className) {
