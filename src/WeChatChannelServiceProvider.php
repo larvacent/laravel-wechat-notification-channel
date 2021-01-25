@@ -8,8 +8,8 @@
 
 namespace Larva\WeChat\Notifications;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * 微信通知渠道
@@ -27,7 +27,8 @@ class WeChatChannelServiceProvider extends ServiceProvider
     {
         $channels = [
             'wechat' => OfficialAccountChannel::class,
-            'wechatMiniProgram' => MiniProgramChannel::class
+            'wechatMiniProgram' => MiniProgramChannel::class,
+            'wechatSubscribe' => WechatSubscribeChannel::class,
         ];
         foreach ($channels as $name => $className) {
             Notification::extend($name, function () use ($className) {
