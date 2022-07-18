@@ -9,9 +9,8 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "illuminate/support": "^5.1 || ^6.0 || ^7.0 || ^8.0",
-        "illuminate/notifications": "^5.1 || ^6.0 || ^7.0 || ^8.0",
-        "larva/supports": "^2.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "illuminate/notifications": "^6.0 || ^7.0 || ^8.0 || ^9.0",
         "overtrue/laravel-wechat": "^5.0 || ^6.0"
     },
     "autoload": {
